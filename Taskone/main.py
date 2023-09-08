@@ -5,7 +5,6 @@ import os
 
 time = datetime.now(pytz.UTC).strftime('%Y-%d-%HT%H:%M:%SZ')
 month = datetime.now(pytz.UTC).strftime('%A')
-print(time, month)
 
 app = Flask(__name__)
 app.config['SECRET_key'] = os.environ.get('s_key')
