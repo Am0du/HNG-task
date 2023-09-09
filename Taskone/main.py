@@ -29,7 +29,7 @@ def api():
                    utc_time=time,
                    track=request.args.get('track'),
                    github_file_url='https://github.com/Am0du/HNG-task/Taskone/main.py',
-                   github_repo_url='https://github.com/username/repo',
+                   github_repo_url='https://github.com/HNG-task/Taskone',
                    status_code=200), 200
 
 
