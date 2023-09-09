@@ -1,5 +1,5 @@
 from flask import Flask, jsonify, request
-from datetime import datetime, timedelta
+from datetime import datetime
 import pytz
 import os
 
@@ -14,18 +14,11 @@ def home():
 
 @app.route('/api')
 def api():
-    time = datetime.now(pytz.UTC)
-    month = datetime.now(pytz.UTC).strftime('%A')
-
-    plus_time = time - timedelta(minutes=2)
-    minus_time = time + timedelta(minutes=2)
-
-    plus_time = plus_time.strftime('%Y-%m-%dT%H:%M:%SZ')
-    minus_time = minus_time.strftime('%Y-%m-%dT%H:%M:%SZ')
+    day = datetime.now(pytz.UTC).strftime('%A')
     time = datetime.now(pytz.UTC).strftime('%Y-%m-%dT%#H:%M:%SZ')
     
     return jsonify(slack_name=request.args.get('slack_name'),
-                   current_day=month,
+                   current_day=day,
                    utc_time=time,
                    track=request.args.get('track'),
                    github_file_url='https://github.com/Am0du/HNG-task/Taskone/main.py',
