@@ -22,7 +22,7 @@ def api():
 
     plus_time = plus_time.strftime('%Y-%m-%dT%H:%M:%SZ')
     minus_time = minus_time.strftime('%Y-%m-%dT%H:%M:%SZ')
-    time = datetime.now(pytz.UTC).strftime('%Y-%m-%dT%#H:%M:%SZ')
+    time = datetime.now(pytz.UTC).strftime('%Y-%m-%dT%-H:%M:%SZ')
 
     return jsonify(slack_name=request.args.get('slack_name'),
                    current_day=month,
