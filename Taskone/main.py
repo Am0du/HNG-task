@@ -7,6 +7,7 @@ app = Flask(__name__)
 app.config['SECRET_key'] = os.environ.get('s_key')
 
 
+
 @app.route('/')
 def home():
     return jsonify(response='Hello')
